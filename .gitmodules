@@ -1,0 +1,3 @@
+[submodule "c/bart"]
+	path = c/bart
+	url = https://github.com/mrirecon/bart.git
