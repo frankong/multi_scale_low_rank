@@ -12,14 +12,11 @@ frankong@berkeley.edu.
 
 ##MATLAB Demos:
 
-      demo_hanning: Perform Multi-scale Low Rank Decomposition on a
-      synthetic matrix with hanning matrices
+      demo_hanning_decom: Perform Multi-scale Low Rank Decomposition on a synthetic matrix with hanning matrices
 
-      demo_face: Perform Multi-scale low rank decomposition on a face
-      image dataset
+      demo_face_decom: Perform Multi-scale low rank decomposition on a face image dataset
 
-      demo_hanning: Perform Multi-scale low rank decomposition on a fully
-      sampled Dynamic Contrast Enhanced image dataset
+      demo_dce_mri_decom: Perform Multi-scale low rank decomposition on a fully sampled Dynamic Contrast Enhanced image dataset
 
 
 ##C Demos
