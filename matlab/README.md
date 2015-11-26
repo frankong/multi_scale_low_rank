@@ -28,14 +28,3 @@ Type "help function" to see documentation for the particular function
 
 
 
-##C Demos
-
-Demos of the multi-scale low rank applied on surveillance videos and
-rating matrices are absent in this Matlab package as they are simply too
-slow to run on MATLAB. They are/will be available along with the
-Berkeley Advanced Reconstruction Toolbox (written in C):
-     https://github.com/mikgroup/bart
-
-
-
-
