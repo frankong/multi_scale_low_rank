@@ -3,6 +3,7 @@ This is a collection of codes in C or in MATLAB to reproduce some of
 the results that are described in the paper:
 Frank Ong and Michael Lustig
 "Beyond Low Rank + Sparse: Multi-scale Low Rank Matrix Decomposition"
+https://arxiv.org/abs/1507.08751
 
 You are encouraged to modify or distribute this code in any way you want. 
 However, please acknowledge this code and cite the papers appropriately. 
