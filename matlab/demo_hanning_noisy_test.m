@@ -11,9 +11,9 @@ setPath
 N = 64; % Matrix length
 L = log2(N);  % Number of levels
 FOV = [N,N]; % Matrix Size
-sigma = 0; % noise-less
+sigma = 0.1;
 
-nIter = 50; % Number of iterations
+nIter = 100; % Number of iterations
 
 rho = 10; % ADMM parameter
 
@@ -23,6 +23,7 @@ max_L = L;
 
 % Generate block sizes
 block_sizes = [2.^(0:2:max_L)', 2.^(0:2:max_L)'];
+block_sizes = [block_sizes; N^2, 1];
 disp('Block sizes:');
 disp(block_sizes)
 
@@ -34,6 +35,10 @@ ns = block_sizes(:,2);
 
 bs = prod( repmat(FOV, [levels,1]) ./ block_sizes, 2 );
 
+ms = [ms; N*N];
+ns = [ns; 1];
+bs = [bs; 1];
+
 % Penalties
 lambdas = sqrt(ms) + sqrt(ns) + sqrt( log2( bs .* min( ms, ns ) ) );
 
@@ -41,18 +46,17 @@ lambdas = sqrt(ms) + sqrt(ns) + sqrt( log2( bs .* min( ms, ns ) ) );
 %% Generate Hanning Blocks
 
 rng(5)
-nblocks = [10, 6, 4, 1];
+nblocks = [10, 6, 4, 1, 1];
 
 [X, X_decom] = gen_hanning( FOV, block_sizes, nblocks, sigma );
 
 
 figure,imshowf(abs(X),[])
-titlef('Input');
+titlef('Original');
 
 figure,imshow3(abs(X_decom),[],[1,levels]),
 titlef('Actual Decomposition');
 drawnow
-
 
 %% Initialize Operator
 
